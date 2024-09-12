@@ -41,11 +41,3 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 
 
 
-
-# --------------------------------------------------
-#  COLOR CONFIG
-# --------------------------------------------------
-
-export CLICOLOR=1
-export LSCOLORS=Exfxcxdxbxegedabagacad
-
