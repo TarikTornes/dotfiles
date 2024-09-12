@@ -25,6 +25,43 @@ unset __conda_setup
 #
 #########################################################################
 
+# --------------------------------------------------
+# VIM KEYBINDING 
+# --------------------------------------------------
+bindkey -v
+bindkey -M viins 'jk' vi-cmd-mode
+
+
+
+# --------------------------------------------------
+#  SHELL PROMPT
+# --------------------------------------------------
+
+function zle-keymap-select {
+    
+    if [[ ${KEYMAP} == vicmd ]]; then
+        # Command mode: RED
+        PROMPT="%n@Tariks-Mac %1~ %F{red}❮ %f"
+    else
+        # Insert mode: GREEN
+        PROMPT="%n@Tariks-Mac %1~ %F{green}❯ %f"
+    fi
+    zle reset-prompt
+}
+
+zle -N zle-keymap-select
+
+# Also trigger the function on every mode switch
+function zle-line-init {
+    zle -K viins    # start in insert mode
+    zle-keymap-select
+}
+zle -N zle-line-init
+
+# Makes sure that default is insert mode
+PROMPT="%n@Tariks-Mac %1~ %F{green}❯ %f"
+
+
 
 # --------------------------------------------------
 #  COLOR CONFIG
