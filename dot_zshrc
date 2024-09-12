@@ -1,0 +1,48 @@
+export PATH=/opt/homebrew/anaconda3/bin:$PATH
+export PATH=/opt/spark/bin:$PATH
+export PATH="/usr/local/texlive/2023/bin/universal-darwin/:$PATH"
+
+ #>>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/tariktornes/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/tariktornes/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/tariktornes/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/tariktornes/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+
+[ -f "/Users/tariktornes/.ghcup/env" ] && source "/Users/tariktornes/.ghcup/env" # ghcup-env
+
+
+
+#########################################################################
+#
+# MY CONFIGURATIONS
+#
+#########################################################################
+
+# ----------------
+#  ALIASES
+# ----------------
+
+alias ta='tmux attach'
+alias fvim='fzf | xargs nvim'   # or 'nvim $(fzf)'
+alias ls='ls -G'
+alias ll='ls -lG'
+alias la='ls -aG'
+alias conf='cd ~/.config/'
+alias csem='cd ~/Documents/UniLux/Semester\ 4/'
+alias wisecow='fortune | cowsay -n'
+alias brave='open -a "Brave Browser"'
+alias braven='open -na "Brave Browser"'
+alias brcal='open -a "Brave Browser" https://sciences.edu.umontpellier.fr/espace-etudiants/' 
+alias skim='/Applications/Skim.app/Contents/MacOS/Skim'
