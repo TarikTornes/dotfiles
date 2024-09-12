@@ -1,30 +1,50 @@
+# --------------------------------------------------
+#  PATH VARIABLE
+# --------------------------------------------------
 
-# Setting PATH for Python 3.11
-# The original version is saved in .zprofile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
-export PATH="/usr/local/texlive/2023/bin/universal-darwin/:$PATH"
-export PATH
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-
-# Added by Toolbox App
-export PATH="$PATH:/Users/tariktornes/Library/Application Support/JetBrains/Toolbox/scripts"
-
+# Setting PATH for Python 3.11
+# The original version is saved in .zprofile.pysave
+PYTHON_311="/Library/Frameworks/Python.framework/Versions/3.11/bin"
 
 # Setting PATH for Python 3.8
 # The original version is saved in .zprofile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
+PYTHON_38="/Library/Frameworks/Python.framework/Versions/3.8/bin"
+
+
+# Setting PATH for TEXLIVE
+TEX="/usr/local/texlive/2023/bin/universal-darwin/"
+
+# Setting PATH for JetBrains Toolbox
+JETBRAINS="/Users/tariktornes/Library/Application Support/JetBrains/Toolbox/scripts"
+
+# Setting PATH for Spark
+SPARK="/opt/spark/bin"
+
+# Setting PATH for Anaconda
+ACONDA="/opt/homebrew/anaconda3/bin"
+
+
+PATH="$PATH:$PYTHON_38:$TEX:$PYTHON_311:$JETBRAINS:$SPARK:$ACONDA"
 export PATH
 
 
-#PYTHON_311="/Library/Frameworks/Python.framework/Versions/3.11/bin"
-#TEX="/usr/local/texlive/2023/bin/universal-darwin/"
-#PYTHON_38="/Library/Frameworks/Python.framework/Versions/3.8/bin"
-#JETBRAINS="/Users/tariktornes/Library/Application Support/JetBrains/Toolbox/scripts"
-#PATH="$PATH:$PYTHON_38:$TEX:$PYTHON_311:$JETBRAINS"
-#export PATH
 
+
+# --------------------------------------------------
+# JAVA VARIABLE 
+# --------------------------------------------------
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+
+
+
+# --------------------------------------------------
+#  COLOR CONFIG
+# --------------------------------------------------
 
 export CLICOLOR=1
 export LSCOLORS=Exfxcxdxbxegedabagacad
