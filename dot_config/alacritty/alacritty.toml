@@ -11,4 +11,13 @@ bold_italic = {family = "Hack Nerd Font", style = "Bold Italic"}
 [window]
 padding = {x=5, y=4}
 decorations = "Buttonless"
+opacity = 0.95
+blur = true
+
+
+[colors]
+
+[colors.primary]
+foreground = "#ff913d"
+background = "#1a0c00"
 
