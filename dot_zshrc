@@ -68,7 +68,7 @@ PROMPT="%n@Tariks-Mac %1~ %F{green}❯ %f"
 # --------------------------------------------------
 
 export CLICOLOR=1
-export LSCOLORS=Exfxcxdxbxegedabagacad
+export LSCOLORS=DxcxcxdxBxegedabagacad
 
 
 
@@ -88,3 +88,4 @@ alias brave='open -a "Brave Browser"'
 alias braven='open -na "Brave Browser"'
 alias brcal='open -a "Brave Browser" https://sciences.edu.umontpellier.fr/espace-etudiants/' 
 alias skim='/Applications/Skim.app/Contents/MacOS/Skim'
+
