@@ -26,8 +26,11 @@ SPARK="/opt/spark/bin"
 # Setting PATH for Anaconda
 ACONDA="/opt/homebrew/anaconda3/bin"
 
+# Setting PATH for Luarocks (Lua Package Manager)
+LROCKS="/Users/tariktornes/.local/share/nvim/lazy-rocks/bin"
 
-PATH="$PATH:$PYTHON_38:$TEX:$PYTHON_311:$JETBRAINS:$SPARK:$ACONDA"
+
+PATH="$PATH:$PYTHON_38:$TEX:$PYTHON_311:$JETBRAINS:$SPARK:$ACONDA:$LROCKS"
 export PATH
 
 
