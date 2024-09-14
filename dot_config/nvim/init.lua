@@ -16,10 +16,14 @@ require "tariktornes.options"
 require "tariktornes.keymaps"
 require "tariktornes.plugins"
 require "tariktornes.cmp"
-require "tariktornes.colorscheme"
+--require "tariktornes.colorscheme"
 require "tariktornes.vimtex"
 require "tariktornes.lsp"
 
 
-vim.cmd "colorscheme darkplus"
+--vim.cmd "colorscheme darkplus"
+-- For Lua
+vim.opt.termguicolors = true
+vim.cmd.colorscheme 'melange'
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'NONE' })
 

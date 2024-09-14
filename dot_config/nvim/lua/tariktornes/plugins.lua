@@ -16,8 +16,10 @@ require("lazy").setup({
   -- Colorschemes
   -- "lunarvim/colorschemes"                -- A bunch of colorschemes you can try out
   "lunarvim/darkplus.nvim",
+  "rktjmp/lush.nvim",
 
   -- cmp plugins
+  "savq/melange-nvim",
   "hrsh7th/nvim-cmp",                       -- The completion plugin
   "hrsh7th/cmp-buffer",                     -- buffer completions
   "hrsh7th/cmp-path",                       -- path completions
@@ -25,7 +27,7 @@ require("lazy").setup({
   "saadparwaiz1/cmp_luasnip",               -- snippet completions
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-nvim-lua",
-    
+
   -- LSP
 
   "neovim/nvim-lspconfig",
@@ -34,6 +36,9 @@ require("lazy").setup({
   "jose-elias-alvarez/null-ls.nvim",
 
   -- Snippets
-  "L3MON4D3/LuaSnip",                       -- snippet engine
+{
+    "L3MON4D3/LuaSnip",
+    build = "make install_jsregexp"
+},
   "rafamadriz/friendly-snippets",           -- snippets
 })
