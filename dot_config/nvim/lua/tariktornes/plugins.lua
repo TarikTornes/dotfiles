@@ -28,6 +28,11 @@ require("lazy").setup({
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-nvim-lua",
 
+ -- Telescope
+  "nvim-telescope/telescope.nvim",
+  "nvim-telescope/telescope-live-grep-args.nvim",
+  "nvim-telescope/telescope-media-files.nvim",
+
   -- LSP
 
   "neovim/nvim-lspconfig",
