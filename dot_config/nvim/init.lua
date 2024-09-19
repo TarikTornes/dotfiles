@@ -1,4 +1,3 @@
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -12,19 +11,21 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require "tariktornes.options"
-require "tariktornes.keymaps"
 require "tariktornes.plugins"
-require "tariktornes.cmp"
---require "tariktornes.colorscheme"
-require "tariktornes.vimtex"
-require "tariktornes.lsp"
-require "tariktornes.telescope"
-require "tariktornes.treesitter"
 
 --vim.cmd "colorscheme darkplus"
 -- For Lua
 vim.opt.termguicolors = true
 vim.cmd.colorscheme 'melange'
 vim.api.nvim_set_hl(0, 'Normal', { bg = 'NONE' })
+
+
+require "tariktornes.options"
+require "tariktornes.keymaps"
+require "tariktornes.cmp"
+--require "tariktornes.colorscheme"
+require "tariktornes.vimtex"
+require "tariktornes.lsp"
+require "tariktornes.telescope"
+require "tariktornes.treesitter"
 
