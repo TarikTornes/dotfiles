@@ -33,6 +33,9 @@ require("lazy").setup({
   "nvim-telescope/telescope-live-grep-args.nvim",
   "nvim-telescope/telescope-media-files.nvim",
 
+   -- Treesitter
+   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+
   -- LSP
 
   "neovim/nvim-lspconfig",
@@ -41,9 +44,6 @@ require("lazy").setup({
   "jose-elias-alvarez/null-ls.nvim",
 
   -- Snippets
-{
-    "L3MON4D3/LuaSnip",
-    build = "make install_jsregexp"
-},
+   {"L3MON4D3/LuaSnip", build = "make install_jsregexp"},
   "rafamadriz/friendly-snippets",           -- snippets
 })

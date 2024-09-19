@@ -20,6 +20,7 @@ require "tariktornes.cmp"
 require "tariktornes.vimtex"
 require "tariktornes.lsp"
 require "tariktornes.telescope"
+require "tariktornes.treesitter"
 
 --vim.cmd "colorscheme darkplus"
 -- For Lua
