@@ -11,7 +11,7 @@ PYTHON_311="/Library/Frameworks/Python.framework/Versions/3.11/bin"
 
 # Setting PATH for Python 3.8
 # The original version is saved in .zprofile.pysave
-PYTHON_38="/Library/Frameworks/Python.framework/Versions/3.8/bin"
+#PYTHON_38="/Library/Frameworks/Python.framework/Versions/3.8/bin"
 
 
 # Setting PATH for TEXLIVE

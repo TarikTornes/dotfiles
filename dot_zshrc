@@ -41,10 +41,10 @@ function zle-keymap-select {
     
     if [[ ${KEYMAP} == vicmd ]]; then
         # Command mode: RED
-        PROMPT="%n@Tariks-Mac %1~ %F{red}❮ %f"
+        PROMPT="${VIRTUAL_ENV:+[$(basename $VIRTUAL_ENV)] }%n@Tariks-Mac %1~ %F{red}❮ %f"
     else
         # Insert mode: GREEN
-        PROMPT="%n@Tariks-Mac %1~ %F{green}❯ %f"
+        PROMPT="${VIRTUAL_ENV:+[$(basename $VIRTUAL_ENV)] }%n@Tariks-Mac %1~ %F{green}❯ %f"
     fi
     zle reset-prompt
 }
@@ -59,7 +59,7 @@ function zle-line-init {
 zle -N zle-line-init
 
 # Makes sure that default is insert mode
-PROMPT="%n@Tariks-Mac %1~ %F{green}❯ %f"
+PROMPT="${VIRTUAL_ENV:+[$(basename $VIRTUAL_ENV)] }%n@Tariks-Mac %1~ %F{green}❯ %f"
 
 
 
