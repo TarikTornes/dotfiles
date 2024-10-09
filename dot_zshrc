@@ -37,14 +37,30 @@ bindkey -M viins 'jk' vi-cmd-mode
 #  SHELL PROMPT
 # --------------------------------------------------
 
+
+function get_env_name {
+    if [[ -n "$CONDA_DEFAULT_ENV" ]]; then
+        # If a Conda environment is active
+        echo "($CONDA_DEFAULT_ENV)"
+    elif [[ -n "$VIRTUAL_ENV" ]]; then
+        # If a virtualenv environment is active
+        echo "[$(basename "$VIRTUAL_ENV")]"
+    fi
+}
+
+
+
 function zle-keymap-select {
+
+    env_name=$(get_env_name)
+    
     
     if [[ ${KEYMAP} == vicmd ]]; then
         # Command mode: RED
-        PROMPT="${VIRTUAL_ENV:+[$(basename $VIRTUAL_ENV)] }%n@Tariks-Mac %1~ %F{red}❮ %f"
+        PROMPT="${env_name} %n@Tariks-Mac %1~ %F{red}❮ %f"
     else
         # Insert mode: GREEN
-        PROMPT="${VIRTUAL_ENV:+[$(basename $VIRTUAL_ENV)] }%n@Tariks-Mac %1~ %F{green}❯ %f"
+        PROMPT="${env_name} %n@Tariks-Mac %1~ %F{green}❯ %f"
     fi
     zle reset-prompt
 }
@@ -59,7 +75,7 @@ function zle-line-init {
 zle -N zle-line-init
 
 # Makes sure that default is insert mode
-PROMPT="${VIRTUAL_ENV:+[$(basename $VIRTUAL_ENV)] }%n@Tariks-Mac %1~ %F{green}❯ %f"
+PROMPT="${get_env_name} %n@Tariks-Mac %1~ %F{green}❯ %f"
 
 
 
