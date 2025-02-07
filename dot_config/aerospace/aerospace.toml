@@ -116,10 +116,9 @@ alt-shift-down = 'resize smart -50'
 alt-shift-up = 'resize smart +50'
 
 
-
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-cmd-1 = 'workspace 1'
-cmd-2 = 'workspace 2'
+cmd-1 = 'workspace T'
+cmd-2 = 'workspace B'
 cmd-3 = 'workspace 3'
 cmd-4 = 'workspace 4'
 cmd-5 = 'workspace 5'
@@ -129,8 +128,8 @@ cmd-8 = 'workspace 8'
 cmd-9 = 'workspace Floats'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-cmd-shift-1 = 'move-node-to-workspace 1'
-cmd-shift-2 = 'move-node-to-workspace 2'
+cmd-shift-1 = 'move-node-to-workspace T'
+cmd-shift-2 = 'move-node-to-workspace B'
 cmd-shift-3 = 'move-node-to-workspace 3'
 cmd-shift-4 = 'move-node-to-workspace 4'
 cmd-shift-5 = 'move-node-to-workspace 5'
@@ -168,3 +167,13 @@ run = ['layout floating', 'move-node-to-workspace Floats']
 [[on-window-detected]]
 if.app-id = 'com.apple.FaceTime'
 run = ['layout floating', 'move-node-to-workspace Floats']
+
+[[on-window-detected]]
+if.app-id = 'org.alacritty'
+run = 'move-node-to-workspace T'
+
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+run = 'move-node-to-workspace B'
+
+
