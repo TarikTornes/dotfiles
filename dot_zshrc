@@ -102,6 +102,7 @@ alias csem='cd ~/Documents/UniLux/Semester\ 5/'
 alias wisecow='fortune | cowsay -n'
 alias brave='open -a "Brave Browser"'
 alias braven='open -na "Brave Browser"'
-alias brcal='open -a "Brave Browser" https://sciences.edu.umontpellier.fr/espace-etudiants/' 
+alias moodle='open -a "Brave Browser" https://moodle.uni.lu/my/index.php' 
+alias ghub='open -a "Brave Browser" https://github.com/TarikTornes/'
 alias skim='/Applications/Skim.app/Contents/MacOS/Skim'
 
