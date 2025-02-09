@@ -21,6 +21,7 @@ vim.api.nvim_set_hl(0, 'Normal', { bg = 'NONE' })
 
 
 require "tariktornes.options"
+require "tariktornes.functions"
 require "tariktornes.keymaps"
 require "tariktornes.cmp"
 --require "tariktornes.colorscheme"
