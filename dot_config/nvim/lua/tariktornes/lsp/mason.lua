@@ -6,6 +6,7 @@ local servers = {
   "clangd",
   "jdtls",
   "rust_analyzer",
+  "omnisharp",
 }
 
 local settings = {

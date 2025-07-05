@@ -29,4 +29,5 @@ require "tariktornes.vimtex"
 require "tariktornes.lsp"
 require "tariktornes.telescope"
 require "tariktornes.treesitter"
+require "tariktornes.alias"
 

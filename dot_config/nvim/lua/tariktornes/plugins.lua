@@ -43,9 +43,42 @@ require("lazy").setup({
   "neovim/nvim-lspconfig",
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
-  "jose-elias-alvarez/null-ls.nvim",
+{
+  "nvimtools/none-ls.nvim",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvimtools/none-ls-extras.nvim"
+  },
+  config = function()
+    -- CORRECTED: Require "none-ls" instead of "null-ls"
+    local null_ls = require("null-ls")
+
+    null_ls.setup({
+        sources = {
+            null_ls.builtins.formatting.stylua,
+            null_ls.builtins.completion.spell,
+            require("none-ls.diagnostics.eslint"), -- requires none-ls-extras.nvim
+        },
+    })
+  end,
+},
+    {
+  "iabdelkareem/csharp.nvim",
+  dependencies = {
+    "williamboman/mason.nvim",
+    "mfussenegger/nvim-dap",
+    "Tastyep/structlog.nvim",
+  },
+  config = function ()
+    require("mason").setup()
+    local csharp_config = require("csharp")
+    require("csharp").setup(csharp_config)
+
+  end
+
+    },
 
   -- Snippets
    {"L3MON4D3/LuaSnip", build = "make install_jsregexp"},
-  "rafamadriz/friendly-snippets",           -- snippets
+  "rafamadriz/friendly-snippets",
 })
