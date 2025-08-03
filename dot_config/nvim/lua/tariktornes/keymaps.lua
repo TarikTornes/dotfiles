@@ -1,42 +1,32 @@
--- noremap = true ensures that keymapping wont propagate
--- silent = true disables that the keymappings will be shown in the cl when executed
-local opts = { noremap = true, silent = true }
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- alias/variable for the keymapping
 local keymap = vim.api.nvim_set_keymap
 
--- Freeing the key space 
-keymap("", "<Space>", "<Nop>", opts)
-
--- Assigning a new leader key
-vim.g.mapleader = " "
-
--- NEUTRAL
--- Opens file explorer Vertically with 38 percent of the lower half 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
-
--- Change keybindings for switch buffers/window
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
--- Resize the current woking window/pane
-keymap("n", "<S-Up>", ":resize +2<CR>", opts)
-keymap("n", "<S-Down>", ":resize -2<CR>", opts)
-keymap("n", "<S-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<S-Right>", ":vertical resize +2<CR>", opts)
+-- noremap = true ensures that keymapping wont propagate
+-- silent = true disables that the keymappings will be shown in the cl when executed
+local opts = { noremap = true, silent = true }
 
 
--- Insert --
+
+
+
+
+
+-- NEUTRAL --
+
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+
+
+
+
+
+
+-- INSERT --
+
 -- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
-
-
-keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
--- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
-keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
+vim.keymap.set('i', 'jk', '<ESC>', opts)
