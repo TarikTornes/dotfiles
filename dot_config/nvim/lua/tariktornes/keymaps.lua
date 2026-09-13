@@ -16,3 +16,4 @@ vim.keymap.set("n", "<leader>l", "<cmd>Lex<CR>", { desc = "[L]explorer" })
 
 -- Press jk fast to enter
 vim.keymap.set("i", "jk", "<ESC>", opts)
+vim.keymap.set("n", "\\ll", "<cmd>VimtexCompile<CR>", { desc = "Compile with VimTex" })

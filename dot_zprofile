@@ -5,6 +5,9 @@
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+
+
+
 # Setting PATH for Python 3.11
 # The original version is saved in .zprofile.pysave
 PYTHON_311="/Library/Frameworks/Python.framework/Versions/3.11/bin"
@@ -18,7 +21,7 @@ PYTHON_311="/Library/Frameworks/Python.framework/Versions/3.11/bin"
 TEX="/usr/local/texlive/2023/bin/universal-darwin/"
 
 # Setting PATH for JetBrains Toolbox
-JETBRAINS="/Users/tariktornes/Library/Application Support/JetBrains/Toolbox/scripts"
+JETBRAINS="$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
 # Setting PATH for Spark
 SPARK="/opt/spark/bin"
@@ -27,11 +30,22 @@ SPARK="/opt/spark/bin"
 ACONDA="/opt/homebrew/anaconda3/bin"
 
 # Setting PATH for Luarocks (Lua Package Manager)
-LROCKS="/Users/tariktornes/.local/share/nvim/lazy-rocks/bin"
+LROCKS="$HOME/.local/share/nvim/lazy-rocks/bin"
+
+BREW="/opt/homebrew/bin"
+
+NPM_GLOBAL="$HOME/.npm-global/bin"
+
+# SUMO_HOME="/Library/Frameworks/EclipseSUMO.framework/Versions/Current/EclipseSUMO/share/sumo/"
+export SUMO_HOME="/Library/Frameworks/EclipseSUMO.framework/Versions/Current/EclipseSUMO/share/sumo"
+
+LOCAL_BIN="/usr/local/bin"
 
 
-PATH="$PATH:$PYTHON_38:$TEX:$PYTHON_311:$JETBRAINS:$SPARK:$ACONDA:$LROCKS"
+
+PATH="$PATH:$PYTHON_38:$TEX:$PYTHON_311:$JETBRAINS:$SPARK:$ACONDA:$LROCKS:$BREW:$NPM_GLOBAL:$SUMO_HOME/bin:$LOCAL_BIN"
 export PATH
+
 
 
 
@@ -48,3 +62,18 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # --------------------------------------------------
 export EDITOR=nvim
 
+
+
+# --------------------------------------------------
+# SUMO VARIABLE
+# --------------------------------------------------
+
+# export SUMO_HOME=/your/path/to/sumo
+
+
+
+# Created by `pipx` on 2026-03-03 15:59:58
+export PATH="$PATH:/Users/tariktornes/.local/bin"
+
+# Added by Obsidian
+export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"

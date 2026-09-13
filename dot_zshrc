@@ -31,6 +31,12 @@ unset __conda_setup
 bindkey -v
 bindkey -M viins 'jk' vi-cmd-mode
 
+# zsh's vi-backward-delete-char (default backspace in viins) won't delete
+# past where insert mode began. Rebind so "i" from normal mode gives back
+# full emacs-style backspace to the start of the line.
+bindkey -M viins '^?' backward-delete-char
+bindkey -M viins '^H' backward-delete-char
+
 
 
 # --------------------------------------------------
@@ -93,16 +99,44 @@ export LSCOLORS=DxcxcxdxBxegedabagacad
 # --------------------------------------------------
 
 alias ta='tmux attach'
-alias fvim='fzf | xargs nvim'   # or 'nvim $(fzf)'
+alias fvim='nvim $(fzf --preview="cat {}")'
 alias ls='ls -G'
 alias ll='ls -lG'
 alias la='ls -aG'
 alias conf='cd ~/.config/'
-alias csem='cd ~/Documents/UniLux/Semester\ 6/'
+alias csem='cd ~/Documents/UniLeuven/semester2/'
 alias wisecow='fortune | cowsay -n'
 alias brave='open -a "Brave Browser"'
 alias braven='open -na "Brave Browser"'
 alias moodle='open -a "Brave Browser" https://moodle.uni.lu/my/index.php' 
 alias ghub='open -a "Brave Browser" https://github.com/TarikTornes/'
 alias skim='/Applications/Skim.app/Contents/MacOS/Skim'
+alias snap='tmutil snapshot'
+alias nxt='open http://raspitarik:8080/apps/files/files'
+alias pyocdflash='pyocd flash --pack ~/Downloads/NordicSemiconductor.nRF_DeviceFamilyPack.8.44.1.pack --target nrf5340_xxaa build/merged.hex'
 
+
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
+
+
+fcf() {
+  local target
+  target=$(fzf) || return
+  if [ -d "$target" ]; then
+    cd "$target"
+  else
+    cd "$(dirname "$target")"
+  fi
+}
+
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/tariktornes/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tariktornes/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/tariktornes/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tariktornes/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="$PATH:/Users/tariktornes/google-cloud-sdk/bin"
+
+# Created by `pipx` on 2026-03-03 15:59:58
+export PATH="$PATH:/Users/tariktornes/.local/bin"
